@@ -38,7 +38,7 @@ server.register(jwt_1.default, {
 // mongodb connection
 async function connectMongoDB() {
     try {
-        const mongoURL = "mongodb://127.0.0.1/mydatabase";
+        const mongoURL = "mongodb+srv://tilak:6m2sztgoV2oxx5tE@cluster0.tniesia.mongodb.net/mydatabase";
         await mongoose_1.default.connect(mongoURL, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
@@ -55,7 +55,7 @@ server.register(Promise.resolve().then(() => __importStar(require('./routes/sign
 server.register(Promise.resolve().then(() => __importStar(require('./routes/login'))));
 // server.register(import('./routes/auth'))
 // port run 3000
-const port = 3000;
+const port = 5000;
 server.listen(port, "0.0.0.0", (err, address) => {
     if (err) {
         console.error(err);

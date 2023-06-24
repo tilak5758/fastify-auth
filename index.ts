@@ -26,7 +26,7 @@ server.register(fastifyJwt, {
 // mongodb connection
 async function connectMongoDB(): Promise<void> {
   try {
-    const mongoURL = "mongodb://127.0.0.1/mydatabase";
+    const mongoURL = "mongodb+srv://tilak:6m2sztgoV2oxx5tE@cluster0.tniesia.mongodb.net/mydatabase";
     await mongoose.connect(mongoURL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -47,7 +47,7 @@ server.register(import('./routes/login'))
 // server.register(import('./routes/auth'))
 
 // port run 3000
-const port =  3000;
+const port =  5000;
 
 server.listen(port, "0.0.0.0", (err, address) => {
   if (err) {
