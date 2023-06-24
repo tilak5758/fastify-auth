@@ -2,7 +2,6 @@ import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 import UserModel from '../model/user';
 import bcrypt from 'bcrypt';
 import { auth } from '../middleware/auth';
-import { RouteShorthandOptions } from 'fastify/types/route';
 
 export default async function (server: FastifyInstance) {
   
@@ -32,12 +31,12 @@ export default async function (server: FastifyInstance) {
       }
 
       const token = server.jwt.sign({ userId: user._id }, { expiresIn: '1h' });
+      
       const responseData = {
         user: {
           message: "User login successfully",
           username: user.username,
           email: user.email,
-          password,
         },
         token
       };

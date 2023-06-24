@@ -9,14 +9,13 @@ import fastifyJwt from "@fastify/jwt";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { ConnectOptions } from "mongodb";
-import { auth } from "./middleware/auth";
 
 dotenv.config();
 
 const server: FastifyInstance = fastify();
 
 server.register(fastifyJwt, {
-  secret: process.env.JWT_SECRET,
+  secret: "mysecret",
 } as FastifyJWTOptions);
 
 
@@ -48,7 +47,7 @@ server.register(import('./routes/login'))
 // server.register(import('./routes/auth'))
 
 // port run 3000
-const port = process.env.PORT || 3000;
+const port =  3000;
 
 server.listen(port, "0.0.0.0", (err, address) => {
   if (err) {
